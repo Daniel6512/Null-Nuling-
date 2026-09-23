@@ -772,22 +772,24 @@ function makeData(input){
 }
 
 async function typeInto(el,text,startDelay=0,speed=TYPE_DELAY){
+  if(!el) return;
   el.textContent = "";
-  const value = String(text);
+  const value = String(text ?? "");
   if(!value) return;
 
-  const frag = document.createDocumentFragment();
+  const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(startDelay && !reducedMotion) await sleep(startDelay);
 
   for(let i=0;i<value.length;i++){
     const span = document.createElement("span");
     span.className = "typing-char";
     span.textContent = value[i] === " " ? "\u00A0" : value[i];
-    span.style.animationDelay = (startDelay + i*speed) + "ms";
-    frag.appendChild(span);
+    el.appendChild(span);
+
+    if(!reducedMotion) await sleep(speed);
   }
 
-  el.appendChild(frag);
-  await sleep(startDelay + value.length*speed + TYPE_DURATION);
+  if(!reducedMotion) await sleep(TYPE_DURATION);
 }
 
 async function typeGroup(keys,gap=55){
@@ -980,7 +982,7 @@ async function run(){
     loading.style.display = "none";
     subscriptionScreen.style.display = "block";
     setStatus("ACCESS / LOCKED",false);
-    subscriptionScreen.scrollIntoView({behavior:"smooth",block:"center"});
+    subscriptionScreen.scrollIntoView({behavior:"auto",block:"center"});
     void playSubscriptionTyping();
   }catch(error){
     console.error("NULL//INDEX runtime error:",error);
@@ -1088,18 +1090,17 @@ async function typeSubscriptionLine(el,text,runId,startDelay=0){
   if(runId !== subscriptionTypingRun) return;
 
   el.textContent = "";
-  const value = String(text || "");
+  const value = String(text ?? "");
+  const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   for(let i=0;i<value.length;i++){
     if(runId !== subscriptionTypingRun) return;
     const span = document.createElement("span");
     span.className = "sub-typing-char";
     span.textContent = value[i] === " " ? "\u00A0" : value[i];
-    span.style.animationDelay = (i * 22) + "ms";
     el.appendChild(span);
-    if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches){
-      continue;
-    }
-    await sleep(22);
+
+    if(!reducedMotion) await sleep(22);
   }
 }
 
@@ -1236,9 +1237,17 @@ releaseScreen.addEventListener("click",e=>{
 });
 
 document.addEventListener("keydown",e=>{
-  if(e.key === "Escape" && releaseScreen.style.display === "flex"){
+  if(e.key !== "Escape") return;
+
+  if(releaseScreen.style.display === "flex"){
     e.preventDefault();
     closeReleaseNotice();
+    return;
+  }
+
+  if(paymentScreen.style.display === "flex"){
+    e.preventDefault();
+    payClose.click();
   }
 });
 
