@@ -220,18 +220,39 @@
   }
 
   .subscription-screen{display:none;width:min(620px,100%);margin:0 auto;animation:reveal .25s ease-out}
-  .subscription-panel{border:1px solid #30353a;background:#090b0d;box-shadow:0 22px 70px rgba(0,0,0,.45);padding:24px}
+  .subscription-panel{
+    position:relative;border:1px solid #30353a;background:#090b0d;
+    box-shadow:0 22px 70px rgba(0,0,0,.45);padding:24px;overflow:hidden
+  }
+  .subscription-panel:before{
+    content:"";position:absolute;left:0;right:0;top:0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.7
+  }
+  .sub-meta{margin-top:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    color:#4f575d;font-size:8px;letter-spacing:.9px}
+  .sub-meta b{color:#7f898f;font-weight:normal}
   .sub-head{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #20252a;padding-bottom:14px}
   .sub-title{font-size:13px;letter-spacing:1.5px;color:#e3e6e8}
   .sub-close{width:38px;min-height:38px;margin:0;padding:0;color:#aeb5b9;font-size:18px;border-color:#30363b}
   .sub-close:hover{color:#fff}
   .sub-icon{width:54px;height:54px;margin:20px auto 14px;border:1px solid #5a3035;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--red);font-size:24px;box-shadow:0 0 22px rgba(185,92,99,.08)}
-  .sub-message{text-align:center;color:#c3c8cb;font-size:11px;line-height:1.7}
+  .sub-message{text-align:center;color:#c3c8cb;font-size:11px;line-height:1.7;min-height:42px}
   .sub-message b{color:#e2e5e7}
-  .sub-status{text-align:center;margin-top:9px;color:var(--red);font-size:9px;letter-spacing:1.2px}
+  .sub-status{text-align:center;margin-top:9px;color:var(--red);font-size:9px;letter-spacing:1.2px;min-height:12px}
+  .sub-typing-char{display:inline-block;opacity:0;animation:subPrint .04s steps(1,end) forwards}
+  @keyframes subPrint{from{opacity:0}to{opacity:1}}
   .plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:20px}
-  .plan{border:1px solid #252a2e;background:#080a0c;padding:14px;min-height:132px;display:flex;flex-direction:column;justify-content:space-between}
+  .plan{
+    position:relative;border:1px solid #252a2e;background:#080a0c;padding:14px;
+    min-height:132px;display:flex;flex-direction:column;justify-content:space-between;
+    transition:border-color .16s ease,background .16s ease,box-shadow .16s ease
+  }
+  .plan:hover{border-color:#39434a;background:#0a0d0f;box-shadow:inset 0 0 0 1px rgba(99,184,201,.035)}
   .plan.featured{border-color:#3d626a;box-shadow:inset 0 0 0 1px rgba(99,184,201,.06)}
+  .plan.featured:before{
+    content:"RECOMMENDED";position:absolute;top:8px;right:9px;
+    color:#596f75;font-size:7px;letter-spacing:.8px
+  }
   .plan-name{font-size:9px;color:#7d878d;letter-spacing:1px}
   .plan-price{margin-top:8px;font-size:20px;color:#e4e7e8}
   .plan-price small{font-size:9px;color:#687178}
@@ -239,6 +260,36 @@
   .plan button{width:100%;min-height:38px;margin:12px 0 0;padding:0 8px;font-size:9px}
   .sub-foot{margin-top:14px;text-align:center;color:#4f575d;font-size:8px;line-height:1.6}
   .sub-back{display:block;margin:12px auto 0;width:auto;min-height:34px;background:transparent;padding:0 13px;font-size:9px}
+
+  .release-screen{
+    display:none;position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.82);
+    align-items:center;justify-content:center;padding:18px;animation:reveal .2s ease-out
+  }
+  .release-panel{
+    position:relative;width:min(560px,100%);border:1px solid #343a3f;background:#090b0d;
+    box-shadow:0 24px 80px rgba(0,0,0,.72);padding:22px;overflow:hidden
+  }
+  .release-panel:before{
+    content:"";position:absolute;left:0;right:0;top:0;height:2px;
+    background:linear-gradient(90deg,transparent,var(--amber),transparent);opacity:.8
+  }
+  .release-head{display:flex;align-items:center;justify-content:space-between;gap:12px;
+    border-bottom:1px solid #20252a;padding-bottom:13px}
+  .release-title{font-size:13px;letter-spacing:1.6px;color:#e2e6e8}
+  .release-version{color:var(--amber);font-size:10px;letter-spacing:1.1px}
+  .release-close{width:auto;min-width:112px;min-height:36px;margin:0;padding:0 12px;font-size:9px}
+  .release-note{margin-top:15px;color:#8c969c;font-size:9px;line-height:1.7}
+  .release-note b{color:#dce0e2;font-weight:normal}
+  .release-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:15px}
+  .release-item{border:1px solid #252a2e;background:#080a0c;padding:11px}
+  .release-item .rk{font-size:8px;color:#566068;letter-spacing:.9px}
+  .release-item .rv{margin-top:7px;color:#bbc2c6;font-size:9px;line-height:1.5}
+  .release-foot{margin-top:13px;color:#4f575d;font-size:8px;line-height:1.6;text-align:center}
+  @media(max-width:650px){
+    .release-grid{grid-template-columns:1fr}
+    .release-panel{padding:17px}
+    .release-close{width:100%}
+  }
 
   .payment-screen{display:none;position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.78);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:18px;animation:reveal .2s ease-out}
   .payment-panel{width:min(430px,100%);border:1px solid #30353a;background:#090b0d;box-shadow:0 24px 80px rgba(0,0,0,.65);padding:22px}
@@ -279,6 +330,7 @@
     .subscription-panel{padding:17px}
     .plans{grid-template-columns:1fr}
     .plan{min-height:108px}
+    .plan.featured:before{top:7px;right:8px}
   }
 
 </style>
@@ -286,7 +338,7 @@
 <body>
 <div class="shell">
   <header>
-    <div class="brand">NULL//<b>INDEX</b><span class="release-mark">R1</span></div>
+    <div class="brand">NULL//<b>INDEX</b><span class="release-mark">R1.2</span></div>
     <div class="status" id="statusLine" aria-live="polite"><i id="statusDot"></i><span id="statusText">SIMULATION / ONLINE</span></div>
   </header>
 
@@ -336,8 +388,15 @@
           <button class="sub-close" id="subClose" type="button" aria-label="Закрыть">×</button>
         </div>
         <div class="sub-icon">×</div>
-        <div class="sub-message"><b>Доступ к расширенному поиску недоступен.</b><br>Для продолжения требуется активировать демонстрационный доступ.</div>
-        <div class="sub-status">SUBSCRIPTION REQUIRED // ACCESS LOCKED</div>
+        <div class="sub-message">
+          <b class="sub-typing-line" data-typing-text="Доступ к расширенному поиску недоступен."></b><br>
+          <span class="sub-typing-line" data-typing-text="Для продолжения требуется активировать демонстрационный доступ."></span>
+        </div>
+        <div class="sub-status sub-typing-line" data-typing-text="SUBSCRIPTION REQUIRED // ACCESS LOCKED"></div>
+        <div class="sub-meta">
+          <span>RELEASE <b>1.2</b></span>
+          <span>ACCESS LAYER <b>LOCAL</b></span>
+        </div>
         <div class="plans">
           <div class="plan">
             <div><div class="plan-name">BASIC ACCESS</div><div class="plan-price">49 ₽ <small>/ мес.</small></div><div class="plan-desc">Базовый доступ к синтетическим записям.</div></div>
@@ -387,7 +446,7 @@
           <div class="pay-title">PAYMENT GATEWAY <span style="color:#596168;font-size:8px;letter-spacing:.8px">LOCAL</span></div>
           <button class="pay-close" id="payClose" type="button" aria-label="Закрыть">×</button>
         </div>
-        <div class="pay-note">Оформление выбранной подписки.</div>
+        <div class="pay-note" id="payNote">Оформление выбранной подписки.</div>
         <div class="pay-field">
           <label>CARD NUMBER</label>
           <input id="demoCardNumber" type="text" inputmode="numeric" autocomplete="off" maxlength="16" placeholder="0000 0000 0000 0000" aria-label="Номер карты">
@@ -504,16 +563,52 @@
       </div>
       <div class="foot">
         <span id="stamp"></span>
-        <button class="back" id="backBtn">[ NEW SEARCH ]</button>
+        <button class="back" id="backBtn" type="button">[ NEW SEARCH ]</button>
       </div>
     </section>
   </main>
 </div>
 <div class="toast" id="toast"></div>
 
+<section class="release-screen" id="releaseScreen" aria-modal="true" aria-labelledby="releaseTitle">
+  <div class="release-panel">
+    <div class="release-head">
+      <div>
+        <div class="release-title" id="releaseTitle">SYSTEM UPDATE</div>
+        <div class="release-version">VERSION 1.2 // PATCH NOTES</div>
+      </div>
+      <button class="release-close" id="releaseClose" type="button">[ CONTINUE ]</button>
+    </div>
+    <div class="release-note">
+      <b>Выпущена новая сборка NULL//INDEX 1.2.</b><br>
+      Обновление содержит внутренние исправления и аккуратную стабилизацию интерфейсных модулей.
+    </div>
+    <div class="release-grid">
+      <div class="release-item">
+        <div class="rk">01 // CORE</div>
+        <div class="rv">Исправление ошибок приложения и стабилизация служебных обработчиков.</div>
+      </div>
+      <div class="release-item">
+        <div class="rk">02 // ACCESS</div>
+        <div class="rv">Оптимизация ключевого контура и реконфигурация локального реестра идентификаторов.</div>
+      </div>
+      <div class="release-item">
+        <div class="rk">03 // UI</div>
+        <div class="rv">Микрооптимизация отрисовки и точечные улучшения модальных окон.</div>
+      </div>
+      <div class="release-item">
+        <div class="rk">04 // STABILITY</div>
+        <div class="rv">Повышена устойчивость вспомогательных состояний при повторном открытии экранов.</div>
+      </div>
+    </div>
+    <div class="release-foot">LOCAL BUILD // NO EXTERNAL LOOKUP // NULL//INDEX</div>
+  </div>
+</section>
+
 <script>
 
 const BUILD = "GLOBAL-RELEASE R1";
+const APP_VERSION = "1.2";
 const TYPE_DELAY = 30;
 const TYPE_DURATION = 80;
 const MAX_USERNAME = 32;
@@ -717,6 +812,9 @@ const accessKeyInput = document.getElementById("accessKeyInput");
 const keySubmit = document.getElementById("keySubmit");
 const keyField = document.getElementById("keyField");
 const keyResult = document.getElementById("keyResult");
+const releaseScreen = document.getElementById("releaseScreen");
+const releaseClose = document.getElementById("releaseClose");
+const payNote = document.getElementById("payNote");
 const results = document.getElementById("results");
 const input = document.getElementById("username");
 const log = document.getElementById("loadLog");
@@ -785,7 +883,8 @@ function summaryText(){
   if(!currentData) return "";
 
   return [
-    "NULL//INDEX — SYNTHETIC RECORD",
+     "NULL//INDEX — SYNTHETIC RECORD",
+    "VERSION: " + APP_VERSION,
     "BUILD: " + BUILD,
     "TARGET: @" + currentTarget,
     "STATUS: " + currentData.status,
@@ -882,11 +981,13 @@ async function run(){
     subscriptionScreen.style.display = "block";
     setStatus("ACCESS / LOCKED",false);
     subscriptionScreen.scrollIntoView({behavior:"smooth",block:"center"});
+    void playSubscriptionTyping();
   }catch(error){
     console.error("NULL//INDEX runtime error:",error);
     loading.style.display = "none";
     subscriptionScreen.style.display = "block";
     setStatus("ACCESS / LOCKED",false);
+    void playSubscriptionTyping();
   }finally{
     btn.disabled = false;
     searchBusy = false;
@@ -927,6 +1028,7 @@ exportBtn.addEventListener("click",()=>{
 
   const payload = {
     app:"NULL//INDEX",
+    version:APP_VERSION,
     build:BUILD,
     synthetic:true,
     externalLookup:false,
@@ -978,11 +1080,65 @@ document.addEventListener("keydown",e=>{
   }
 });
 
+let subscriptionTypingRun = 0;
+
+async function typeSubscriptionLine(el,text,runId,startDelay=0){
+  if(!el) return;
+  if(startDelay) await sleep(startDelay);
+  if(runId !== subscriptionTypingRun) return;
+
+  el.textContent = "";
+  const value = String(text || "");
+  for(let i=0;i<value.length;i++){
+    if(runId !== subscriptionTypingRun) return;
+    const span = document.createElement("span");
+    span.className = "sub-typing-char";
+    span.textContent = value[i] === " " ? "\u00A0" : value[i];
+    span.style.animationDelay = (i * 22) + "ms";
+    el.appendChild(span);
+    if(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+      continue;
+    }
+    await sleep(22);
+  }
+}
+
+function resetSubscriptionTyping(){
+  subscriptionTypingRun++;
+  document.querySelectorAll(".sub-typing-line").forEach(el=>{
+    el.textContent = "";
+  });
+}
+
+async function playSubscriptionTyping(){
+  resetSubscriptionTyping();
+  const runId = subscriptionTypingRun;
+  const lines = [...document.querySelectorAll(".sub-typing-line")];
+  const first = lines[0];
+  const second = lines[1];
+  const third = lines[2];
+
+  await typeSubscriptionLine(first,first?.dataset.typingText || "",runId,80);
+  await typeSubscriptionLine(second,second?.dataset.typingText || "",runId,90);
+  await typeSubscriptionLine(third,third?.dataset.typingText || "",runId,70);
+}
+
+function showReleaseNotice(){
+  releaseScreen.style.display = "flex";
+  releaseClose.focus();
+}
+
+function closeReleaseNotice(){
+  releaseScreen.style.display = "none";
+  input.focus();
+}
+
 function returnToSearch(){
   if(searchBusy) return;
   results.style.display = "none";
   loading.style.display = "none";
   subscriptionScreen.style.display = "none";
+  resetSubscriptionTyping();
   paymentScreen.style.display = "none";
   keyScreen.style.display = "none";
   keyResult.classList.remove("show");
@@ -1058,6 +1214,8 @@ accessKeyInput.addEventListener("keydown",e=>{
 
 document.querySelectorAll(".planBtn").forEach(button=>{
   button.addEventListener("click",()=>{
+    const plan = button.dataset.plan || "SELECTED PLAN";
+    if(payNote) payNote.textContent = "Оформление: " + plan + ".";
     paymentScreen.style.display = "flex";
     setStatus("PAYMENT / DEMO",false);
   });
@@ -1071,6 +1229,19 @@ payDemoBtn.addEventListener("click",()=>{
   showToast("ДАННЫЕ ПРИНЯТЫ // СПАСИБО ЗА ПОКУПКУ!");
 });
 
+releaseClose.addEventListener("click",closeReleaseNotice);
+
+releaseScreen.addEventListener("click",e=>{
+  if(e.target === releaseScreen) closeReleaseNotice();
+});
+
+document.addEventListener("keydown",e=>{
+  if(e.key === "Escape" && releaseScreen.style.display === "flex"){
+    e.preventDefault();
+    closeReleaseNotice();
+  }
+});
+
 // Ограничения полей карты: только цифры и фиксированная длина.
 [
   [document.getElementById("demoCardNumber"),16],
@@ -1082,7 +1253,7 @@ payDemoBtn.addEventListener("click",()=>{
   });
 });
 
-input.focus();
+showReleaseNotice();
 
 </script>
 </body>
