@@ -261,36 +261,6 @@
   .sub-foot{margin-top:14px;text-align:center;color:#4f575d;font-size:8px;line-height:1.6}
   .sub-back{display:block;margin:12px auto 0;width:auto;min-height:34px;background:transparent;padding:0 13px;font-size:9px}
 
-  .release-screen{
-    display:none;position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.82);
-    align-items:center;justify-content:center;padding:18px;animation:reveal .2s ease-out
-  }
-  .release-panel{
-    position:relative;width:min(560px,100%);border:1px solid #343a3f;background:#090b0d;
-    box-shadow:0 24px 80px rgba(0,0,0,.72);padding:22px;overflow:hidden
-  }
-  .release-panel:before{
-    content:"";position:absolute;left:0;right:0;top:0;height:2px;
-    background:linear-gradient(90deg,transparent,var(--amber),transparent);opacity:.8
-  }
-  .release-head{display:flex;align-items:center;justify-content:space-between;gap:12px;
-    border-bottom:1px solid #20252a;padding-bottom:13px}
-  .release-title{font-size:13px;letter-spacing:1.6px;color:#e2e6e8}
-  .release-version{color:var(--amber);font-size:10px;letter-spacing:1.1px}
-  .release-close{width:auto;min-width:112px;min-height:36px;margin:0;padding:0 12px;font-size:9px}
-  .release-note{margin-top:15px;color:#8c969c;font-size:9px;line-height:1.7}
-  .release-note b{color:#dce0e2;font-weight:normal}
-  .release-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:15px}
-  .release-item{border:1px solid #252a2e;background:#080a0c;padding:11px}
-  .release-item .rk{font-size:8px;color:#566068;letter-spacing:.9px}
-  .release-item .rv{margin-top:7px;color:#bbc2c6;font-size:9px;line-height:1.5}
-  .release-foot{margin-top:13px;color:#4f575d;font-size:8px;line-height:1.6;text-align:center}
-  @media(max-width:650px){
-    .release-grid{grid-template-columns:1fr}
-    .release-panel{padding:17px}
-    .release-close{width:100%}
-  }
-
   .payment-screen{display:none;position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.78);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:18px;animation:reveal .2s ease-out}
   .payment-panel{width:min(430px,100%);border:1px solid #30353a;background:#090b0d;box-shadow:0 24px 80px rgba(0,0,0,.65);padding:22px}
   .pay-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #20252a;padding-bottom:13px}
@@ -338,7 +308,7 @@
 <body>
 <div class="shell">
   <header>
-    <div class="brand">NULL//<b>INDEX</b><span class="release-mark">R1.2</span></div>
+    <div class="brand">NULL//<b>INDEX</b><span class="release-mark">R1.3</span></div>
     <div class="status" id="statusLine" aria-live="polite"><i id="statusDot"></i><span id="statusText">SIMULATION / ONLINE</span></div>
   </header>
 
@@ -394,7 +364,7 @@
         </div>
         <div class="sub-status sub-typing-line" data-typing-text="SUBSCRIPTION REQUIRED // ACCESS LOCKED"></div>
         <div class="sub-meta">
-          <span>RELEASE <b>1.2</b></span>
+          <span>RELEASE <b>1.3</b></span>
           <span>ACCESS LAYER <b>LOCAL</b></span>
         </div>
         <div class="plans">
@@ -570,45 +540,10 @@
 </div>
 <div class="toast" id="toast"></div>
 
-<section class="release-screen" id="releaseScreen" aria-modal="true" aria-labelledby="releaseTitle">
-  <div class="release-panel">
-    <div class="release-head">
-      <div>
-        <div class="release-title" id="releaseTitle">SYSTEM UPDATE</div>
-        <div class="release-version">VERSION 1.2 // PATCH NOTES</div>
-      </div>
-      <button class="release-close" id="releaseClose" type="button">[ CONTINUE ]</button>
-    </div>
-    <div class="release-note">
-      <b>Выпущена новая сборка NULL//INDEX 1.2.</b><br>
-      Обновление содержит внутренние исправления и аккуратную стабилизацию интерфейсных модулей.
-    </div>
-    <div class="release-grid">
-      <div class="release-item">
-        <div class="rk">01 // CORE</div>
-        <div class="rv">Исправление ошибок приложения и стабилизация служебных обработчиков.</div>
-      </div>
-      <div class="release-item">
-        <div class="rk">02 // ACCESS</div>
-        <div class="rv">Оптимизация ключевого контура и реконфигурация локального реестра идентификаторов.</div>
-      </div>
-      <div class="release-item">
-        <div class="rk">03 // UI</div>
-        <div class="rv">Микрооптимизация отрисовки и точечные улучшения модальных окон.</div>
-      </div>
-      <div class="release-item">
-        <div class="rk">04 // STABILITY</div>
-        <div class="rv">Повышена устойчивость вспомогательных состояний при повторном открытии экранов.</div>
-      </div>
-    </div>
-    <div class="release-foot">LOCAL BUILD // NO EXTERNAL LOOKUP // NULL//INDEX</div>
-  </div>
-</section>
-
 <script>
 
-const BUILD = "GLOBAL-RELEASE R1";
-const APP_VERSION = "1.2";
+const BUILD = "GLOBAL-RELEASE R1.3";
+const APP_VERSION = "1.3";
 const TYPE_DELAY = 30;
 const TYPE_DURATION = 80;
 const MAX_USERNAME = 32;
@@ -814,8 +749,6 @@ const accessKeyInput = document.getElementById("accessKeyInput");
 const keySubmit = document.getElementById("keySubmit");
 const keyField = document.getElementById("keyField");
 const keyResult = document.getElementById("keyResult");
-const releaseScreen = document.getElementById("releaseScreen");
-const releaseClose = document.getElementById("releaseClose");
 const payNote = document.getElementById("payNote");
 const results = document.getElementById("results");
 const input = document.getElementById("username");
@@ -1124,15 +1057,6 @@ async function playSubscriptionTyping(){
   await typeSubscriptionLine(third,third?.dataset.typingText || "",runId,70);
 }
 
-function showReleaseNotice(){
-  releaseScreen.style.display = "flex";
-  releaseClose.focus();
-}
-
-function closeReleaseNotice(){
-  releaseScreen.style.display = "none";
-  input.focus();
-}
 
 function returnToSearch(){
   if(searchBusy) return;
@@ -1230,18 +1154,13 @@ payDemoBtn.addEventListener("click",()=>{
   showToast("ДАННЫЕ ПРИНЯТЫ // СПАСИБО ЗА ПОКУПКУ!");
 });
 
-releaseClose.addEventListener("click",closeReleaseNotice);
-
-releaseScreen.addEventListener("click",e=>{
-  if(e.target === releaseScreen) closeReleaseNotice();
-});
 
 document.addEventListener("keydown",e=>{
   if(e.key !== "Escape") return;
 
-  if(releaseScreen.style.display === "flex"){
+  if(keyScreen.style.display === "flex"){
     e.preventDefault();
-    closeReleaseNotice();
+    closeKeyScreen();
     return;
   }
 
@@ -1262,7 +1181,6 @@ document.addEventListener("keydown",e=>{
   });
 });
 
-showReleaseNotice();
 
 </script>
 </body>
