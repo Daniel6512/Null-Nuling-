@@ -274,6 +274,64 @@
   .pay-row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
   .pay-action{width:100%;margin:15px 0 0;min-height:42px}
   .pay-foot{margin-top:11px;color:#4f575d;font-size:8px;line-height:1.6;text-align:center}
+  .pay-field-msg{display:none;margin-top:6px;color:var(--red);font-size:8px;line-height:1.45}
+  .pay-field.has-error .pay-field-msg{display:block}
+  .pay-field.has-error input{border-color:#5a3035;box-shadow:inset 0 0 0 1px rgba(185,92,99,.12)}
+  .pay-field.has-ok input{border-color:#31553f;box-shadow:inset 0 0 0 1px rgba(100,209,139,.08)}
+  .pay-panel-state{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;padding:8px 10px;border:1px solid #20252a;background:#080a0c;color:#596168;font-size:8px;letter-spacing:.8px}
+  .pay-panel-state b{color:#7f898f;font-weight:normal}
+  .pay-result{display:none;margin-top:14px;padding:14px;border:1px solid #4b2b30;background:#100b0d;text-align:center;animation:errorIn .22s ease-out}
+  .pay-result.show{display:block}
+  .pay-result-icon{width:42px;height:42px;margin:0 auto 9px;border:1px solid #5a3035;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--red);font-size:21px;box-shadow:0 0 18px rgba(185,92,99,.08)}
+  .pay-result-title{color:var(--red);font-size:10px;letter-spacing:1.1px}
+  .pay-result-text{margin-top:7px;color:#c3c8cb;font-size:9px;line-height:1.65}
+  .pay-result-text b{color:#e2e5e7}
+  .pay-result-meta{margin-top:9px;color:#626a70;font-size:8px;letter-spacing:.6px}
+  .pay-demo-loading{display:inline-flex;align-items:center;gap:8px}
+  .pay-demo-dot{width:5px;height:5px;background:var(--cyan);border-radius:50%;animation:blink .7s steps(1) infinite}
+  .tool-action{width:auto;min-height:28px;margin:0;padding:0 9px;border-color:#30363b;background:#080a0c;font-size:8px}
+  .system-strip{margin-top:8px;border:1px solid #20252a;background:#080a0c;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px}
+  .node-cell{min-width:0;padding:9px 10px;border-right:1px solid #171b1e}
+  .node-cell:last-child{border-right:0}
+  .node-k{font-size:7px;color:#565f66;letter-spacing:.9px}
+  .node-v{margin-top:5px;color:#aab1b5;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .node-v.cyan{color:var(--cyan)}
+  .node-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--green);margin-right:5px;vertical-align:1px}
+  .history-panel{margin-top:8px;border:1px solid #252a2e;background:#080a0c;padding:12px}
+  .history-head{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .history-title{font-size:9px;color:#69737a;letter-spacing:1px}
+  .history-count{font-size:8px;color:#4f575d}
+  .history-list{margin-top:8px;display:grid;gap:5px}
+  .history-empty{color:#4f575d;font-size:8px;padding:4px 0}
+  .history-item{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;width:100%;margin:0;padding:8px 9px;border:1px solid #20252a;background:#090b0d;text-align:left;color:#9fa7ac;font-size:8px;min-height:0;transition:border-color .16s ease,background .16s ease}
+  .history-item:hover{background:#0b0e10;border-color:#39434a;box-shadow:none}
+  .history-user{font-size:9px;color:#c7cccf;word-break:break-all}
+  .history-time{font-size:7px;color:#596168;white-space:nowrap}
+  .access-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:13px}
+  .access-level{border:1px solid #20252a;background:#080a0c;padding:9px 8px;text-align:center}
+  .access-level .ak{font-size:8px;letter-spacing:.8px;color:#5e676e}
+  .access-level .av{margin-top:5px;font-size:9px;color:#8c959b}
+  .access-level.active{border-color:#355845;box-shadow:inset 0 0 0 1px rgba(100,209,139,.06)}
+  .access-level.active .av{color:var(--green)}
+  .access-level.locked .av{color:#5d4a4d}
+  .log-panel{margin-top:8px;border:1px solid #252a2e;background:#080a0c;padding:11px 12px}
+  .log-panel-head{display:flex;justify-content:space-between;gap:10px;align-items:center}
+  .log-panel-title{font-size:8px;color:#69737a;letter-spacing:1px}
+  .log-panel-badge{font-size:7px;color:#596168}
+  .system-log{margin-top:8px;max-height:118px;overflow:auto;font-size:8px;line-height:1.8;color:#6f787f;white-space:pre-wrap;scrollbar-width:thin}
+  .system-log .ok{color:#80948a}
+  .system-log .warn{color:#8a795a}
+  .changelog-screen{display:none;position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.78);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:18px;animation:reveal .2s ease-out}
+  .changelog-panel{width:min(480px,100%);border:1px solid #30353a;background:#090b0d;box-shadow:0 24px 80px rgba(0,0,0,.65);padding:21px}
+  .changelog-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #20252a;padding-bottom:13px}
+  .changelog-title{font-size:12px;letter-spacing:1.3px;color:#e3e6e8}
+  .changelog-close{width:36px;min-height:36px;margin:0;padding:0;font-size:17px}
+  .changelog-list{margin-top:14px;display:grid;gap:7px}
+  .change{display:grid;grid-template-columns:74px 1fr;gap:10px;padding:9px 10px;border:1px solid #20252a;background:#080a0c}
+  .change-k{font-size:8px;color:#596168;letter-spacing:.7px}
+  .change-v{font-size:9px;color:#aeb4b8;line-height:1.55}
+  .change-v b{color:#d7dadd}
+  .changelog-foot{margin-top:13px;text-align:center;color:#4f575d;font-size:8px;line-height:1.55}
   .key-entry{margin-top:10px;border-top:1px solid #20252a;padding-top:12px}
   .key-open{width:100%;min-height:38px;margin:0;padding:0 10px;font-size:9px;background:#080a0c}
   .key-screen{display:none;position:fixed;inset:0;z-index:21;background:rgba(0,0,0,.78);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:18px;animation:reveal .2s ease-out}
@@ -297,10 +355,37 @@
   .key-screen .shake{animation:fieldShake .22s ease-in-out}
 
   @media(max-width:650px){
+    .system-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .node-cell{border-right:0;border-bottom:1px solid #171b1e}
+    .node-cell:nth-child(odd){border-right:1px solid #171b1e}
+    .node-cell:nth-last-child(-n+2){border-bottom:0}
+    .access-grid{grid-template-columns:1fr}
+    .change{grid-template-columns:1fr}
+    .history-item{grid-template-columns:1fr;height:auto;margin:0}
+    .history-time{white-space:normal}
+    .tool-action{width:auto;height:28px;margin:0}
+    .pay-close,.changelog-close,.key-close,.sub-close{width:38px;height:38px;margin:0}
+    .payment-panel{padding:17px}
     .subscription-panel{padding:17px}
     .plans{grid-template-columns:1fr}
     .plan{min-height:108px}
     .plan.featured:before{top:7px;right:8px}
+  }
+
+  /* R1.4 compact mobile main menu: keep all features, reduce vertical crowding. */
+  @media(max-width:650px){
+    main{min-height:auto;align-items:flex-start;padding:16px 0 26px}
+    .search-screen{margin-top:0}
+    .hero-emblem{min-height:0;margin:0 auto 11px}
+    .hero-emblem img{width:min(160px,40vw);max-height:220px}
+    .boot{font-size:9px;letter-spacing:1.6px;margin-bottom:15px}
+    .search-box{padding:20px}
+
+    /* Node telemetry remains intact but fits in one compact horizontal row. */
+    .system-strip{display:flex;grid-template-columns:none;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .system-strip::-webkit-scrollbar{display:none}
+    .node-cell{flex:0 0 112px;border-right:1px solid #171b1e !important;border-bottom:0 !important;padding:8px 9px}
+    .node-cell:last-child{border-right:0 !important}
   }
 
 </style>
@@ -308,7 +393,7 @@
 <body>
 <div class="shell">
   <header>
-    <div class="brand">NULL//<b>INDEX</b><span class="release-mark">R1.3</span></div>
+    <div class="brand">NULL//<b>INDEX</b><span class="release-mark">R1.4</span></div>
     <div class="status" id="statusLine" aria-live="polite"><i id="statusDot"></i><span id="statusText">SIMULATION / ONLINE</span></div>
   </header>
 
@@ -320,6 +405,15 @@
     <span>DATASET <b>LOCAL</b></span>
     <span>ENCRYPTION <b>N/A</b></span>
     <span>LATENCY <b id="latency">-- ms</b></span>
+    <span>ACCESS <b id="accessLevelText">GUEST</b></span>
+    <button class="tool-action" id="changelogBtn" type="button">[ R1.4 CHANGELOG ]</button>
+  </div>
+  <div class="system-strip" aria-label="Статус узла">
+    <div class="node-cell"><div class="node-k">NODE STATUS</div><div class="node-v"><span class="node-dot"></span>ONLINE / 05</div></div>
+    <div class="node-cell"><div class="node-k">SIM CPU</div><div class="node-v cyan" id="nodeCpu">18%</div></div>
+    <div class="node-cell"><div class="node-k">SIM MEM</div><div class="node-v" id="nodeMem">42%</div></div>
+    <div class="node-cell"><div class="node-k">INDEX HEALTH</div><div class="node-v" id="nodeIndex">98.6%</div></div>
+    <div class="node-cell"><div class="node-k">UPTIME</div><div class="node-v" id="nodeUptime">00:00:00</div></div>
   </div>
 
   <main>
@@ -340,6 +434,15 @@
           <b>INPUT ERROR //</b> <span id="inputErrorText">Введите username перед запуском поиска.</span>
         </div>
       </div>
+      <div class="history-panel" id="historyPanel">
+        <div class="history-head">
+          <div class="history-title">QUERY HISTORY // LOCAL</div>
+          <div class="history-count" id="historyCount">0 / 5</div>
+        </div>
+        <div class="history-list" id="historyList">
+          <div class="history-empty">NO LOCAL QUERIES RECORDED</div>
+        </div>
+      </div>
     </section>
 
     <section class="loading" id="loading" aria-live="polite" aria-busy="true">
@@ -348,7 +451,10 @@
       <div class="load-progress" aria-hidden="true">
           <span id="loadProgress"></span>
         </div>
-        <div class="load-log" id="loadLog"></div>
+        <div class="log-panel">
+          <div class="log-panel-head"><div class="log-panel-title">SYSTEM CONSOLE // NODE 05</div><div class="log-panel-badge">LOCAL EXECUTION</div></div>
+          <div class="load-log system-log" id="loadLog"></div>
+        </div>
     </section>
 
     <section class="subscription-screen" id="subscriptionScreen" aria-live="assertive">
@@ -359,12 +465,12 @@
         </div>
         <div class="sub-icon">×</div>
         <div class="sub-message">
-          <b class="sub-typing-line" data-typing-text="Доступ к расширенному поиску недоступен."></b><br>
+          <b class="sub-typing-line" data-typing-text="Расширенный поиск недоступен."></b><br>
           <span class="sub-typing-line" data-typing-text="Для продолжения требуется активировать демонстрационный доступ."></span>
         </div>
         <div class="sub-status sub-typing-line" data-typing-text="SUBSCRIPTION REQUIRED // ACCESS LOCKED"></div>
         <div class="sub-meta">
-          <span>RELEASE <b>1.3</b></span>
+          <span>RELEASE <b>1.4</b></span>
           <span>ACCESS LAYER <b>LOCAL</b></span>
         </div>
         <div class="plans">
@@ -381,7 +487,16 @@
             <button type="button" class="planBtn" data-plan="FULL ACCESS">ACTIVATE</button>
           </div>
         </div>
-        <div class="sub-foot"></div>
+        <div class="access-grid" aria-label="Уровни доступа">
+          <div class="access-level active"><div class="ak">GUEST</div><div class="av">ACTIVE</div></div>
+          <div class="access-level locked"><div class="ak">OPERATOR</div><div class="av">LOCKED</div></div>
+          <div class="access-level locked"><div class="ak">ADMIN</div><div class="av">LOCKED</div></div>
+        </div>
+        <div class="log-panel">
+          <div class="log-panel-head"><div class="log-panel-title">SYSTEM LOG // SESSION</div><div class="log-panel-badge" id="sessionId">SESSION —</div></div>
+          <div class="system-log" id="sessionLog"></div>
+        </div>
+        <div class="sub-foot">LOCAL ACCESS LAYER // NO EXTERNAL BILLING OR LOOKUP</div>
         <div class="key-entry">
           <button class="key-open" id="keyOpen" type="button">[ INSERT ACCESS KEY ]</button>
         </div>
@@ -417,16 +532,41 @@
           <button class="pay-close" id="payClose" type="button" aria-label="Закрыть">×</button>
         </div>
         <div class="pay-note" id="payNote">Оформление выбранной подписки.</div>
-        <div class="pay-field">
+        <div class="pay-panel-state"><span>TRANSACTION MODE</span><b>LOCAL DEMO / DECLINE TEST</b></div>
+        <div class="pay-field" id="cardField">
           <label>CARD NUMBER</label>
-          <input id="demoCardNumber" type="text" inputmode="numeric" autocomplete="off" maxlength="16" placeholder="0000 0000 0000 0000" aria-label="Номер карты">
+          <input id="demoCardNumber" type="text" inputmode="numeric" autocomplete="off" maxlength="19" placeholder="0000 0000 0000 0000" aria-label="Номер карты" aria-describedby="cardFieldMsg">
+          <div class="pay-field-msg" id="cardFieldMsg"></div>
         </div>
         <div class="pay-row">
-          <div class="pay-field"><label>EXPIRY</label><input id="demoExpiry" type="text" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="MM / YY" aria-label="Срок действия"></div>
-          <div class="pay-field"><label>CVV</label><input id="demoCvv" type="text" inputmode="numeric" autocomplete="off" maxlength="3" placeholder="CVV" aria-label="CVV"></div>
+          <div class="pay-field" id="expiryField"><label>EXPIRY</label><input id="demoExpiry" type="text" inputmode="numeric" autocomplete="off" maxlength="7" placeholder="MM / YY" aria-label="Срок действия" aria-describedby="expiryFieldMsg"><div class="pay-field-msg" id="expiryFieldMsg"></div></div>
+          <div class="pay-field" id="cvvField"><label>CVV</label><input id="demoCvv" type="text" inputmode="numeric" autocomplete="off" maxlength="3" placeholder="CVV" aria-label="CVV" aria-describedby="cvvFieldMsg"><div class="pay-field-msg" id="cvvFieldMsg"></div></div>
         </div>
-        <button class="pay-action" id="payDemoBtn" type="button">CONTINUE</button>
-        <div class="pay-foot"></div>
+        <button class="pay-action" id="payDemoBtn" type="button">PAY <span id="payAmountLabel">SELECTED PLAN</span></button>
+        <div class="pay-result" id="payResult" aria-live="assertive">
+          <div class="pay-result-icon">×</div>
+          <div class="pay-result-title">PAYMENT DECLINED</div>
+          <div class="pay-result-text"><b>Операция отклонена.</b><br>Недостаточно средств или тестовый эмитент отклонил операцию.</div>
+          <div class="pay-result-meta" id="payResultMeta">DEMO TRANSACTION // —</div>
+        </div>
+        <div class="pay-foot">Только локальная демонстрация. Реальное списание денежных средств не выполняется.</div>
+      </div>
+    </section>
+
+    <section class="changelog-screen" id="changelogScreen" aria-modal="true" aria-label="Изменения версии R1.4">
+      <div class="changelog-panel">
+        <div class="changelog-head">
+          <div class="changelog-title">CHANGELOG // R1.4</div>
+          <button class="changelog-close" id="changelogClose" type="button" aria-label="Закрыть">×</button>
+        </div>
+        <div class="changelog-list">
+          <div class="change"><div class="change-k">HISTORY</div><div class="change-v"><b>QUERY HISTORY</b> сохраняет последние локальные запросы и быстро подставляет их снова.</div></div>
+          <div class="change"><div class="change-k">NODE</div><div class="change-v"><b>NODE STATUS</b> получил компактный телеметрический блок с SIM CPU, SIM MEM, INDEX HEALTH и UPTIME.</div></div>
+          <div class="change"><div class="change-k">ACCESS</div><div class="change-v"><b>ACCESS LEVEL</b> визуально разделяет GUEST, OPERATOR и ADMIN без перегрузки интерфейса.</div></div>
+          <div class="change"><div class="change-k">LOGGING</div><div class="change-v"><b>SYSTEM CONSOLE / SYSTEM LOG</b> теперь показывают ход локальной демонстрационной сессии.</div></div>
+          <div class="change"><div class="change-k">PAYMENT</div><div class="change-v"><b>VALIDATION</b> проверяет обязательные поля, длину, формат срока действия и CVV, после чего имитирует отказ тестовой оплаты.</div></div>
+        </div>
+        <div class="changelog-foot">R1.4 // SYNTHETIC LOCAL BUILD // NO EXTERNAL LOOKUP</div>
       </div>
     </section>
 
@@ -542,8 +682,8 @@
 
 <script>
 
-const BUILD = "GLOBAL-RELEASE R1.3";
-const APP_VERSION = "1.3";
+const BUILD = "GLOBAL-RELEASE R1.4";
+const APP_VERSION = "1.4";
 const TYPE_DELAY = 30;
 const TYPE_DURATION = 80;
 const MAX_USERNAME = 32;
@@ -750,6 +890,28 @@ const keySubmit = document.getElementById("keySubmit");
 const keyField = document.getElementById("keyField");
 const keyResult = document.getElementById("keyResult");
 const payNote = document.getElementById("payNote");
+const payAmountLabel = document.getElementById("payAmountLabel");
+const payResult = document.getElementById("payResult");
+const payResultMeta = document.getElementById("payResultMeta");
+const cardField = document.getElementById("cardField");
+const expiryField = document.getElementById("expiryField");
+const cvvField = document.getElementById("cvvField");
+const demoCardNumber = document.getElementById("demoCardNumber");
+const demoExpiry = document.getElementById("demoExpiry");
+const demoCvv = document.getElementById("demoCvv");
+const historyPanel = document.getElementById("historyPanel");
+const historyList = document.getElementById("historyList");
+const historyCount = document.getElementById("historyCount");
+const accessLevelText = document.getElementById("accessLevelText");
+const sessionId = document.getElementById("sessionId");
+const sessionLog = document.getElementById("sessionLog");
+const nodeCpu = document.getElementById("nodeCpu");
+const nodeMem = document.getElementById("nodeMem");
+const nodeIndex = document.getElementById("nodeIndex");
+const nodeUptime = document.getElementById("nodeUptime");
+const changelogBtn = document.getElementById("changelogBtn");
+const changelogScreen = document.getElementById("changelogScreen");
+const changelogClose = document.getElementById("changelogClose");
 const results = document.getElementById("results");
 const input = document.getElementById("username");
 const log = document.getElementById("loadLog");
@@ -768,6 +930,149 @@ const timeline = document.getElementById("timeline");
 let currentData = null;
 let currentTarget = "";
 let searchBusy = false;
+let currentPlan = "";
+let paymentBusy = false;
+const HISTORY_KEY = "null-index-history-r1.4";
+const MAX_HISTORY = 5;
+const bootStartedAt = Date.now();
+
+function safeText(value){
+  return String(value ?? "").replace(/[&<>\"]/g, char=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[char]));
+}
+
+function formatClock(totalSeconds){
+  const h = Math.floor(totalSeconds/3600).toString().padStart(2,"0");
+  const m = Math.floor((totalSeconds%3600)/60).toString().padStart(2,"0");
+  const sec = (totalSeconds%60).toString().padStart(2,"0");
+  return `${h}:${m}:${sec}`;
+}
+
+function updateNodeTelemetry(){
+  const tick = Math.floor((Date.now()-bootStartedAt)/1000);
+  const wave = tick % 12;
+  if(nodeCpu) nodeCpu.textContent = (16 + (wave*2)%11) + "%";
+  if(nodeMem) nodeMem.textContent = (41 + (wave%6)) + "%";
+  if(nodeIndex) nodeIndex.textContent = (98.1 + (wave%5)*0.2).toFixed(1) + "%";
+  if(nodeUptime) nodeUptime.textContent = formatClock(tick);
+}
+
+function getHistory(){
+  try{
+    const raw = localStorage.getItem(HISTORY_KEY);
+    const value = raw ? JSON.parse(raw) : [];
+    return Array.isArray(value) ? value.slice(0,MAX_HISTORY) : [];
+  }catch(e){ return []; }
+}
+
+function saveHistory(username){
+  if(!username) return;
+  const entry = {username, at:new Date().toISOString()};
+  const list = getHistory().filter(item=>String(item?.username).toLowerCase() !== username.toLowerCase());
+  list.unshift(entry);
+  try{ localStorage.setItem(HISTORY_KEY, JSON.stringify(list.slice(0,MAX_HISTORY))); }catch(e){}
+  renderHistory();
+}
+
+function historyLabel(iso){
+  try{ return new Date(iso).toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}); }
+  catch(e){ return "--:--"; }
+}
+
+function renderHistory(){
+  if(!historyList || !historyCount) return;
+  const list = getHistory();
+  historyCount.textContent = list.length + " / " + MAX_HISTORY;
+  if(historyPanel) historyPanel.style.display = list.length ? "block" : "none";
+  if(!list.length){
+    historyList.innerHTML = '<div class="history-empty">NO LOCAL QUERIES RECORDED</div>';
+    return;
+  }
+  historyList.innerHTML = list.map((item,i)=>`<button type="button" class="history-item" data-history-index="${i}"><span class="history-user">@${safeText(item.username)}</span><span class="history-time">${safeText(historyLabel(item.at))}</span></button>`).join("");
+  historyList.querySelectorAll(".history-item").forEach(button=>{
+    button.addEventListener("click",()=>{
+      const index = Number(button.dataset.historyIndex);
+      const selected = getHistory()[index];
+      if(!selected) return;
+      input.value = selected.username;
+      clearError();
+      input.focus();
+      run();
+    });
+  });
+}
+
+function makeSessionId(username){
+  const seed = hashSeed(username || "session") ^ Date.now();
+  return "R14-" + (seed >>> 0).toString(36).toUpperCase().slice(-8).padStart(8,"0");
+}
+
+function appendSessionLog(message,kind=""){
+  if(!sessionLog) return;
+  const time = new Date().toLocaleTimeString([], {hour:"2-digit",minute:"2-digit",second:"2-digit"});
+  const row = document.createElement("div");
+  row.className = kind;
+  row.textContent = `[${time}] ${message}`;
+  sessionLog.appendChild(row);
+  sessionLog.scrollTop = sessionLog.scrollHeight;
+}
+
+function resetPaymentState(){
+  paymentBusy = false;
+  [cardField,expiryField,cvvField].forEach(el=>el?.classList.remove("has-error","has-ok"));
+  [document.getElementById("cardFieldMsg"),document.getElementById("expiryFieldMsg"),document.getElementById("cvvFieldMsg")].forEach(el=>{if(el) el.textContent="";});
+  payResult?.classList.remove("show");
+  if(payDemoBtn) payDemoBtn.disabled = false;
+  if(payDemoBtn) payDemoBtn.innerHTML = 'PAY <span id="payAmountLabel">' + safeText(currentPlan || "SELECTED PLAN") + '</span>';
+  demoCardNumber?.setAttribute("aria-invalid","false");
+  demoExpiry?.setAttribute("aria-invalid","false");
+  demoCvv?.setAttribute("aria-invalid","false");
+}
+
+function setPayField(field,inputEl,msgEl,message,isOk=false){
+  if(!field || !inputEl || !msgEl) return;
+  field.classList.remove("has-error","has-ok");
+  if(message){
+    field.classList.add("has-error");
+    msgEl.textContent = message;
+    inputEl.setAttribute("aria-invalid","true");
+  }else if(isOk){
+    field.classList.add("has-ok");
+    msgEl.textContent = "";
+    inputEl.setAttribute("aria-invalid","false");
+  }else{
+    msgEl.textContent = "";
+    inputEl.setAttribute("aria-invalid","false");
+  }
+}
+
+function validatePayment(){
+  const card = (demoCardNumber?.value || "").replace(/\D/g,"");
+  const expiry = (demoExpiry?.value || "").replace(/\D/g,"");
+  const cvv = (demoCvv?.value || "").replace(/\D/g,"");
+  let valid = true;
+
+  if(!card) { setPayField(cardField,demoCardNumber,document.getElementById("cardFieldMsg"),"Введите номер карты — нужно 16 цифр."); valid=false; }
+  else if(card.length<16) { const missing=16-card.length; setPayField(cardField,demoCardNumber,document.getElementById("cardFieldMsg"),`Не хватает ${missing} ${missing===1?"цифры":"цифр"}.`); valid=false; }
+  else setPayField(cardField,demoCardNumber,document.getElementById("cardFieldMsg"),"",true);
+
+  if(!expiry) { setPayField(expiryField,demoExpiry,document.getElementById("expiryFieldMsg"),"Введите срок действия в формате MM / YY."); valid=false; }
+  else if(expiry.length<4) { const missing=4-expiry.length; setPayField(expiryField,demoExpiry,document.getElementById("expiryFieldMsg"),`Не хватает ${missing} ${missing===1?"цифры":"цифр"}.`); valid=false; }
+  else {
+    const month=Number(expiry.slice(0,2));
+    const year=2000+Number(expiry.slice(2,4));
+    const now=new Date();
+    const end=new Date(year,month,0,23,59,59,999);
+    if(month<1 || month>12) { setPayField(expiryField,demoExpiry,document.getElementById("expiryFieldMsg"),"Месяц должен быть от 01 до 12."); valid=false; }
+    else if(end < new Date(now.getFullYear(),now.getMonth(),1)) { setPayField(expiryField,demoExpiry,document.getElementById("expiryFieldMsg"),"Срок действия карты уже истёк."); valid=false; }
+    else setPayField(expiryField,demoExpiry,document.getElementById("expiryFieldMsg"),"",true);
+  }
+
+  if(!cvv) { setPayField(cvvField,demoCvv,document.getElementById("cvvFieldMsg"),"Введите CVV — нужно 3 цифры."); valid=false; }
+  else if(cvv.length<3) { const missing=3-cvv.length; setPayField(cvvField,demoCvv,document.getElementById("cvvFieldMsg"),`Не хватает ${missing} ${missing===1?"цифры":"цифр"}.`); valid=false; }
+  else setPayField(cvvField,demoCvv,document.getElementById("cvvFieldMsg"),"",true);
+
+  return valid;
+}
 
 function setStatus(text,busy=false){
   statusText.textContent = text;
@@ -831,6 +1136,7 @@ function summaryText(){
     "RECORD: " + currentData.record,
     "CONFIDENCE: " + currentData.confidence,
     "IDENTITY MATCH: " + currentData.match + "%",
+    "ACCESS LEVEL: GUEST / DEMO",
     "NOTICE: LOCAL SYNTHETIC DATA / NO EXTERNAL LOOKUP"
   ].join("\n");
 }
@@ -889,6 +1195,7 @@ async function run(){
   }
 
   clearError();
+  saveHistory(normalized);
   searchBusy = true;
   btn.disabled = true;
   searchScreen.style.display = "none";
@@ -896,21 +1203,36 @@ async function run(){
   subscriptionScreen.style.display = "none";
   loading.style.display = "block";
   setStatus("INDEXING / ONLINE",true);
-  log.textContent = "> opening local synthetic index...\\n";
+  log.textContent = "> opening local synthetic index...\n";
+  log.textContent += "> loading node profile 05...\n";
   const startProgress = document.getElementById("loadProgress");
   if(startProgress) startProgress.style.width = "12%";
 
   try{
     await sleep(430);
     if(startProgress) startProgress.style.width = "34%";
-    log.textContent += "> checking access permissions...\\n";
+    log.textContent += "> checking access permissions...\n";
     await sleep(280);
+    log.textContent += "> resolving local dataset...\n";
+    await sleep(220);
+    log.textContent += "> access layer: GUEST / LOCKED\n";
+    await sleep(180);
 
-    // Deliberately stop the fictional loading flow and show the local demo paywall.
+    // Stop at the local demo paywall; no external lookup is performed.
     if(startProgress) startProgress.style.width = "100%";
-    latency.textContent = "LOCKED";
+    latency.textContent = (24 + Math.floor((hashSeed(normalized)%37))) + " ms";
     currentTarget = normalized;
     currentData = null;
+
+    if(accessLevelText) accessLevelText.textContent = "GUEST";
+    if(sessionId) sessionId.textContent = "SESSION " + makeSessionId(normalized);
+    if(sessionLog){
+      sessionLog.innerHTML = "";
+      appendSessionLog("QUERY RECEIVED // @" + normalized,"ok");
+      appendSessionLog("LOCAL DATASET SELECTED // NODE 05");
+      appendSessionLog("ACCESS LEVEL VERIFIED // GUEST");
+      appendSessionLog("PAYWALL TRIGGERED // SUBSCRIPTION REQUIRED","warn");
+    }
 
     loading.style.display = "none";
     subscriptionScreen.style.display = "block";
@@ -919,6 +1241,10 @@ async function run(){
     void playSubscriptionTyping();
   }catch(error){
     console.error("NULL//INDEX runtime error:",error);
+    if(sessionLog){
+      sessionLog.innerHTML = "";
+      appendSessionLog("LOCAL FLOW INTERRUPTED // PAYWALL FALLBACK","warn");
+    }
     loading.style.display = "none";
     subscriptionScreen.style.display = "block";
     setStatus("ACCESS / LOCKED",false);
@@ -1033,7 +1359,7 @@ async function typeSubscriptionLine(el,text,runId,startDelay=0){
     span.textContent = value[i] === " " ? "\u00A0" : value[i];
     el.appendChild(span);
 
-    if(!reducedMotion) await sleep(22);
+    if(!reducedMotion) await sleep(16);
   }
 }
 
@@ -1052,9 +1378,9 @@ async function playSubscriptionTyping(){
   const second = lines[1];
   const third = lines[2];
 
-  await typeSubscriptionLine(first,first?.dataset.typingText || "",runId,80);
-  await typeSubscriptionLine(second,second?.dataset.typingText || "",runId,90);
-  await typeSubscriptionLine(third,third?.dataset.typingText || "",runId,70);
+  await typeSubscriptionLine(first,first?.dataset.typingText || "",runId,60);
+  await typeSubscriptionLine(second,second?.dataset.typingText || "",runId,70);
+  await typeSubscriptionLine(third,third?.dataset.typingText || "",runId,55);
 }
 
 
@@ -1065,7 +1391,10 @@ function returnToSearch(){
   subscriptionScreen.style.display = "none";
   resetSubscriptionTyping();
   paymentScreen.style.display = "none";
+  resetPaymentState();
+  currentPlan = "";
   keyScreen.style.display = "none";
+  changelogScreen.style.display = "none";
   keyResult.classList.remove("show");
   keyField.classList.remove("input-invalid");
   accessKeyInput.classList.remove("shake");
@@ -1084,6 +1413,7 @@ function returnToSearch(){
   document.getElementById("ageBar").style.width = "0%";
   btn.disabled = false;
   clearError();
+  if(accessLevelText) accessLevelText.textContent = "GUEST";
   setStatus("SIMULATION / ONLINE",false);
   latency.textContent = "-- ms";
   const loadProgress = document.getElementById("loadProgress");
@@ -1139,24 +1469,103 @@ accessKeyInput.addEventListener("keydown",e=>{
 
 document.querySelectorAll(".planBtn").forEach(button=>{
   button.addEventListener("click",()=>{
-    const plan = button.dataset.plan || "SELECTED PLAN";
-    if(payNote) payNote.textContent = "Оформление: " + plan + ".";
+    currentPlan = button.dataset.plan || "SELECTED PLAN";
+    if(payNote) payNote.textContent = "Оформление: " + currentPlan + ".";
+    if(payAmountLabel) payAmountLabel.textContent = currentPlan;
+    resetPaymentState();
     paymentScreen.style.display = "flex";
     setStatus("PAYMENT / DEMO",false);
+    setTimeout(()=>demoCardNumber?.focus(),60);
   });
 });
 
 payClose.addEventListener("click",()=>{
   paymentScreen.style.display = "none";
+  resetPaymentState();
   setStatus("ACCESS / LOCKED",false);
 });
-payDemoBtn.addEventListener("click",()=>{
-  showToast("ДАННЫЕ ПРИНЯТЫ // СПАСИБО ЗА ПОКУПКУ!");
+
+payDemoBtn.addEventListener("click",async()=>{
+  if(paymentBusy) return;
+  payResult?.classList.remove("show");
+  const valid = validatePayment();
+  if(!valid){
+    showToast("CHECK PAYMENT FIELDS");
+    const firstInvalid = document.querySelector(".pay-field.has-error input");
+    firstInvalid?.focus();
+    return;
+  }
+
+  paymentBusy = true;
+  payDemoBtn.disabled = true;
+  payDemoBtn.innerHTML = '<span class="pay-demo-loading"><span class="pay-demo-dot"></span> PROCESSING</span>';
+  setStatus("PAYMENT / PROCESSING",true);
+  await sleep(720);
+
+  const transaction = "TX-" + (Math.abs(hashSeed((currentTarget || "demo") + Date.now())) >>> 0).toString(36).toUpperCase().slice(-8).padStart(8,"0");
+  if(payResultMeta) payResultMeta.textContent = "DEMO TRANSACTION // " + transaction;
+  payResult?.classList.add("show");
+  payDemoBtn.disabled = false;
+  payDemoBtn.innerHTML = 'PAY <span id="payAmountLabel">' + safeText(currentPlan || "SELECTED PLAN") + '</span>';
+  paymentBusy = false;
+  setStatus("PAYMENT / DECLINED",false);
+  showToast("PAYMENT DECLINED // INSUFFICIENT FUNDS");
 });
 
+[
+  [demoCardNumber,cardField,document.getElementById("cardFieldMsg")],
+  [demoExpiry,expiryField,document.getElementById("expiryFieldMsg")],
+  [demoCvv,cvvField,document.getElementById("cvvFieldMsg")]
+].forEach(([field,box,msg])=>{
+  field?.addEventListener("input",()=>{
+    payResult?.classList.remove("show");
+    box?.classList.remove("has-error","has-ok");
+    if(msg) msg.textContent = "";
+  });
+});
+
+demoCardNumber?.addEventListener("input",()=>{
+  const digits = demoCardNumber.value.replace(/\D/g,"").slice(0,16);
+  demoCardNumber.value = digits.replace(/(\d{4})(?=\d)/g,"$1 ").trim();
+});
+
+demoExpiry?.addEventListener("input",()=>{
+  const digits = demoExpiry.value.replace(/\D/g,"").slice(0,4);
+  demoExpiry.value = digits.length > 2 ? digits.slice(0,2) + " / " + digits.slice(2) : digits;
+});
+
+demoCvv?.addEventListener("input",()=>{
+  demoCvv.value = demoCvv.value.replace(/\D/g,"").slice(0,3);
+});
+
+
+changelogBtn?.addEventListener("click",()=>{
+  changelogScreen.style.display = "flex";
+  setStatus("CHANGELOG / R1.4",false);
+});
+
+function closeChangelog(){
+  changelogScreen.style.display = "none";
+  setStatus(paymentScreen.style.display === "flex" ? "PAYMENT / DEMO" : "SIMULATION / ONLINE",false);
+}
+
+changelogClose?.addEventListener("click",closeChangelog);
+changelogScreen?.addEventListener("click",e=>{
+  if(e.target === changelogScreen) closeChangelog();
+});
+
+renderHistory();
+updateNodeTelemetry();
+setInterval(updateNodeTelemetry,3000);
 
 document.addEventListener("keydown",e=>{
   if(e.key !== "Escape") return;
+
+  if(changelogScreen.style.display === "flex"){
+    e.preventDefault();
+    closeChangelog();
+    return;
+  }
 
   if(keyScreen.style.display === "flex"){
     e.preventDefault();
@@ -1169,18 +1578,6 @@ document.addEventListener("keydown",e=>{
     payClose.click();
   }
 });
-
-// Ограничения полей карты: только цифры и фиксированная длина.
-[
-  [document.getElementById("demoCardNumber"),16],
-  [document.getElementById("demoExpiry"),4],
-  [document.getElementById("demoCvv"),3]
-].forEach(([field,max])=>{
-  field.addEventListener("input",()=>{
-    field.value = field.value.replace(/\D/g,"").slice(0,max);
-  });
-});
-
 
 </script>
 </body>
