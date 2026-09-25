@@ -193,108 +193,6 @@
     .foot{align-items:flex-start;gap:8px}
   }
 
-  /* R1.4 release feedback — shown once per browser/device */
-  .release-feedback-screen{
-    display:none;position:fixed;inset:0;z-index:60;
-    background:rgba(0,0,0,.80);backdrop-filter:blur(4px);
-    align-items:center;justify-content:center;padding:18px;
-    animation:reveal .2s ease-out;
-  }
-  .release-feedback-panel{
-    width:min(480px,100%);border:1px solid #30353a;background:#090b0d;
-    box-shadow:0 24px 80px rgba(0,0,0,.68);padding:21px;position:relative;
-    overflow:hidden;
-  }
-  .release-feedback-panel:before{
-    content:"";position:absolute;left:0;right:0;top:0;height:2px;
-    background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.75;
-  }
-  .release-feedback-head{
-    display:flex;align-items:center;justify-content:space-between;
-    gap:12px;border-bottom:1px solid #20252a;padding-bottom:13px;
-  }
-  .release-feedback-title{font-size:12px;letter-spacing:1.3px;color:#e3e6e8}
-  .release-feedback-version{
-    margin-top:5px;color:#596168;font-size:8px;letter-spacing:.9px
-  }
-  .release-feedback-close{
-    width:36px;min-height:36px;margin:0;padding:0;font-size:17px
-  }
-  .release-feedback-icon{
-    width:54px;height:54px;margin:20px auto 14px;border:1px solid #3d626a;
-    border-radius:50%;display:flex;align-items:center;justify-content:center;
-    color:var(--cyan);font-size:22px;box-shadow:0 0 22px rgba(99,184,201,.08)
-  }
-  .release-feedback-message{text-align:center;color:#c3c8cb;font-size:11px;line-height:1.7}
-  .release-feedback-message b{color:#e2e5e7}
-  .release-feedback-note{
-    margin-top:8px;text-align:center;color:#596168;font-size:8px;line-height:1.55
-  }
-  .release-feedback-field{margin-top:17px}
-  .release-feedback-field label{
-    display:block;color:#69737a;font-size:8px;letter-spacing:1px;margin-bottom:6px
-  }
-  .release-feedback-field textarea{
-    display:block;width:100%;min-height:92px;resize:none;
-    border:1px solid #30363b;background:#050607;color:#dce0e2;
-    padding:10px 11px;font:12px "Courier New",monospace;outline:none;
-    caret-color:var(--cyan);line-height:1.45;
-  }
-  .release-feedback-field textarea:focus{
-    border-color:#647078;box-shadow:inset 0 0 0 1px #1a2024
-  }
-  .release-feedback-counter{
-    margin-top:6px;text-align:right;color:#4f575d;font-size:8px;letter-spacing:.6px
-  }
-  .release-feedback-actions{display:flex;gap:8px;margin-top:12px}
-  .release-feedback-actions button{
-    flex:1;width:auto;min-height:42px;margin:0;padding:0 12px;font-size:9px
-  }
-  .release-feedback-send{
-    border-color:#3d626a;background:#0c1113
-  }
-  .release-feedback-send:not(:disabled):hover{
-    border-color:#6f9da6;background:#11181b;box-shadow:0 0 18px rgba(99,184,201,.07)
-  }
-  .release-feedback-status{
-    min-height:15px;margin-top:10px;text-align:center;
-    color:#596168;font-size:8px;letter-spacing:.8px
-  }
-  .release-feedback-status.ok{color:var(--green)}
-  .release-feedback-status.busy{color:var(--cyan)}
-  .release-feedback-status.error{color:var(--red)}
-  .release-feedback-loader{display:none;text-align:center;padding:19px 0 8px}
-  .release-feedback-loader.show{display:block}
-  .release-feedback-spinner{
-    width:42px;height:42px;border-radius:50%;border:2px solid #1b2024;
-    border-top-color:var(--cyan);border-right-color:#7f5960;
-    margin:0 auto 13px;animation:spin .78s linear infinite;
-    box-shadow:0 0 18px rgba(99,184,201,.07)
-  }
-  .release-feedback-loader-title{font-size:10px;letter-spacing:1.4px;color:#cbd0d3}
-  .release-feedback-loader-log{
-    margin-top:9px;color:#5e676e;font-size:8px;line-height:1.8;
-    min-height:34px;white-space:pre-wrap
-  }
-  .release-feedback-success{
-    display:none;text-align:center;padding:18px 0 7px;animation:reveal .2s ease-out
-  }
-  .release-feedback-success.show{display:block}
-  .release-feedback-check{
-    width:48px;height:48px;margin:0 auto 10px;border:1px solid #31553f;
-    border-radius:50%;display:flex;align-items:center;justify-content:center;
-    color:var(--green);font-size:23px;box-shadow:0 0 20px rgba(100,209,139,.07)
-  }
-  .release-feedback-success-title{font-size:10px;letter-spacing:1.1px;color:var(--green)}
-  .release-feedback-success-text{margin-top:7px;color:#aeb4b8;font-size:9px;line-height:1.6}
-  .release-feedback-microfreeze{filter:none}
-  @media(max-width:650px){
-    .release-feedback-screen{padding:12px}
-    .release-feedback-panel{padding:17px}
-    .release-feedback-actions{flex-direction:column}
-    .release-feedback-actions button{width:100%}
-  }
-
   .input-error{display:none;margin-top:9px;padding:8px 10px;border:1px solid #4b2b30;
     background:#100b0d;color:var(--red);font-size:9px;line-height:1.5}
   .input-error.show{display:block;animation:errorIn .22s ease-out}
@@ -475,7 +373,7 @@
     .plan.featured:before{top:7px;right:8px}
   }
 
-  /* R1.4 compact mobile main menu: keep all features, reduce vertical crowding. */
+  /* R1.5 compact mobile main menu: keep all features, reduce vertical crowding. */
   @media(max-width:650px){
     main{min-height:auto;align-items:flex-start;padding:16px 0 26px}
     .search-screen{margin-top:0}
@@ -496,7 +394,7 @@
 <body>
 <div class="shell">
   <header>
-    <div class="brand">NULL//<b>INDEX</b><span class="release-mark">R1.4</span></div>
+    <div class="brand">NULL//<b>INDEX</b><span class="release-mark">R1.5</span></div>
     <div class="status" id="statusLine" aria-live="polite"><i id="statusDot"></i><span id="statusText">SIMULATION / ONLINE</span></div>
   </header>
 
@@ -509,7 +407,7 @@
     <span>ENCRYPTION <b>N/A</b></span>
     <span>LATENCY <b id="latency">-- ms</b></span>
     <span>ACCESS <b id="accessLevelText">GUEST</b></span>
-    <button class="tool-action" id="changelogBtn" type="button">[ R1.4 CHANGELOG ]</button>
+    <button class="tool-action" id="changelogBtn" type="button">[ R1.5 CHANGELOG ]</button>
   </div>
   <div class="system-strip" aria-label="Статус узла">
     <div class="node-cell"><div class="node-k">NODE STATUS</div><div class="node-v"><span class="node-dot"></span>ONLINE / 05</div></div>
@@ -656,20 +554,20 @@
       </div>
     </section>
 
-    <section class="changelog-screen" id="changelogScreen" aria-modal="true" aria-label="Изменения версии R1.4">
+    <section class="changelog-screen" id="changelogScreen" aria-modal="true" aria-label="Изменения версии R1.5">
       <div class="changelog-panel">
         <div class="changelog-head">
-          <div class="changelog-title">CHANGELOG // R1.4</div>
+          <div class="changelog-title">CHANGELOG // R1.5</div>
           <button class="changelog-close" id="changelogClose" type="button" aria-label="Закрыть">×</button>
         </div>
         <div class="changelog-list">
-          <div class="change"><div class="change-k">HISTORY</div><div class="change-v"><b>QUERY HISTORY</b> сохраняет последние локальные запросы и быстро подставляет их снова.</div></div>
-          <div class="change"><div class="change-k">NODE</div><div class="change-v"><b>NODE STATUS</b> получил компактный телеметрический блок с SIM CPU, SIM MEM, INDEX HEALTH и UPTIME.</div></div>
-          <div class="change"><div class="change-k">ACCESS</div><div class="change-v"><b>ACCESS LEVEL</b> визуально разделяет GUEST, OPERATOR и ADMIN без перегрузки интерфейса.</div></div>
-          <div class="change"><div class="change-k">LOGGING</div><div class="change-v"><b>SYSTEM CONSOLE / SYSTEM LOG</b> теперь показывают ход локальной демонстрационной сессии.</div></div>
-          <div class="change"><div class="change-k">PAYMENT</div><div class="change-v"><b>VALIDATION</b> проверяет обязательные поля, длину, формат срока действия и CVV, после чего имитирует отказ тестовой оплаты.</div></div>
+          <div class="change"><div class="change-k">RELEASE</div><div class="change-v"><b>R1.5</b> переведён в стабильный режим без обязательного первого запуска с запросом обратной связи.</div></div>
+          <div class="change"><div class="change-k">VERSION</div><div class="change-v"><b>BUILD / APP VERSION</b> обновлены до R1.5 / 1.5 во всех основных метаданных приложения.</div></div>
+          <div class="change"><div class="change-k">CLEANUP</div><div class="change-v"><b>STARTUP FLOW</b> убран лишний первый экран, который требовал вводить идеи для следующего обновления.</div></div>
+          <div class="change"><div class="change-k">STABILITY</div><div class="change-v"><b>SESSION / CHANGELOG</b> синхронизированы с новой версией без изменения основной логики поиска и демонстрационного доступа.</div></div>
+          <div class="change"><div class="change-k">POLISH</div><div class="change-v"><b>R1.5</b> сохранены текущая компоновка, стиль интерфейса, локальный режим и существующие функции.</div></div>
         </div>
-        <div class="changelog-foot">R1.4 // SYNTHETIC LOCAL BUILD // NO EXTERNAL LOOKUP</div>
+        <div class="changelog-foot">R1.5 // SYNTHETIC LOCAL BUILD // NO EXTERNAL LOOKUP</div>
       </div>
     </section>
 
@@ -782,63 +680,12 @@
   </main>
 </div>
 
-<div class="release-feedback-screen" id="releaseFeedbackScreen" aria-modal="true" aria-label="Обновление R1.4">
-  <div class="release-feedback-panel">
-    <div class="release-feedback-head">
-      <div>
-        <div class="release-feedback-title">UPDATE AVAILABLE // R1.4</div>
-        <div class="release-feedback-version">FEEDBACK CHANNEL // NEXT RELEASE R1.5</div>
-      </div>
-      <button class="release-feedback-close" id="releaseFeedbackClose" type="button" aria-label="Закрыть">×</button>
-    </div>
-
-    <div class="release-feedback-icon" aria-hidden="true">↗</div>
-
-    <div class="release-feedback-message">
-      <b>Вышло обновление 1.4.</b><br>
-      Пожалуйста, опишите, что бы вы хотели видеть в дальнейшем обновлении 1.5.
-    </div>
-    <div class="release-feedback-note">
-      Сообщение будет обработано и передано в базу данных приложения.
-    </div>
-
-    <div class="release-feedback-field">
-      <label for="releaseFeedbackInput">YOUR FEEDBACK</label>
-      <textarea id="releaseFeedbackInput" maxlength="30" autocomplete="off"
-        placeholder="Напишите идею для R1.5..." aria-label="Идея для обновления 1.5"></textarea>
-      <div class="release-feedback-counter" id="releaseFeedbackCounter">0 / 30</div>
-    </div>
-
-    <div class="release-feedback-actions" id="releaseFeedbackActions">
-      <button type="button" id="releaseFeedbackSkip">CLOSE</button>
-      <button type="button" class="release-feedback-send" id="releaseFeedbackSend">SEND FEEDBACK</button>
-    </div>
-
-    <div class="release-feedback-status" id="releaseFeedbackStatus" aria-live="polite"></div>
-
-    <div class="release-feedback-loader" id="releaseFeedbackLoader" aria-live="polite">
-      <div class="release-feedback-spinner"></div>
-      <div class="release-feedback-loader-title">TRANSMITTING FEEDBACK</div>
-      <div class="release-feedback-loader-log" id="releaseFeedbackLoaderLog">&gt; preparing local package...</div>
-    </div>
-
-    <div class="release-feedback-success" id="releaseFeedbackSuccess" aria-live="polite">
-      <div class="release-feedback-check">✓</div>
-      <div class="release-feedback-success-title">FEEDBACK SENT</div>
-      <div class="release-feedback-success-text">
-        Ваше предложение отмечено как отправленное.<br>
-        Спасибо за обратную связь по R1.5.
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="toast" id="toast"></div>
 
 <script>
 
-const BUILD = "GLOBAL-RELEASE R1.4";
-const APP_VERSION = "1.4";
+const BUILD = "GLOBAL-RELEASE R1.5";
+const APP_VERSION = "1.5";
 const TYPE_DELAY = 30;
 const TYPE_DURATION = 80;
 const MAX_USERNAME = 32;
@@ -1081,21 +928,6 @@ const inputErrorText = document.getElementById("inputErrorText");
 const latency = document.getElementById("latency");
 const statusText = document.getElementById("statusText");
 const timeline = document.getElementById("timeline");
-const releaseFeedbackScreen = document.getElementById("releaseFeedbackScreen");
-const releaseFeedbackClose = document.getElementById("releaseFeedbackClose");
-const releaseFeedbackSkip = document.getElementById("releaseFeedbackSkip");
-const releaseFeedbackSend = document.getElementById("releaseFeedbackSend");
-const releaseFeedbackInput = document.getElementById("releaseFeedbackInput");
-const releaseFeedbackCounter = document.getElementById("releaseFeedbackCounter");
-const releaseFeedbackStatus = document.getElementById("releaseFeedbackStatus");
-const releaseFeedbackLoader = document.getElementById("releaseFeedbackLoader");
-const releaseFeedbackLoaderLog = document.getElementById("releaseFeedbackLoaderLog");
-const releaseFeedbackSuccess = document.getElementById("releaseFeedbackSuccess");
-const releaseFeedbackActions = document.getElementById("releaseFeedbackActions");
-const RELEASE_FEEDBACK_SEEN_KEY = "null-index-r1.4-release-feedback-seen";
-let releaseFeedbackBusy = false;
-
-
 let currentData = null;
 let currentTarget = "";
 let searchBusy = false;
@@ -1129,7 +961,12 @@ function getHistory(){
   try{
     const raw = localStorage.getItem(HISTORY_KEY);
     const value = raw ? JSON.parse(raw) : [];
-    return Array.isArray(value) ? value.slice(0,MAX_HISTORY) : [];
+    if(!Array.isArray(value)) return [];
+    const trimmed = value.slice(0,MAX_HISTORY);
+    if(value.length !== trimmed.length){
+      try{ localStorage.setItem(HISTORY_KEY, JSON.stringify(trimmed)); }catch(e){}
+    }
+    return trimmed;
   }catch(e){ return []; }
 }
 
@@ -1141,130 +978,6 @@ function saveHistory(username){
   try{ localStorage.setItem(HISTORY_KEY, JSON.stringify(list.slice(0,MAX_HISTORY))); }catch(e){}
   renderHistory();
 }
-
-function releaseFeedbackWasShown(){
-  try{
-    return localStorage.getItem(RELEASE_FEEDBACK_SEEN_KEY) === "1";
-  }catch(e){
-    return false;
-  }
-}
-
-function markReleaseFeedbackShown(){
-  try{
-    localStorage.setItem(RELEASE_FEEDBACK_SEEN_KEY,"1");
-  }catch(e){}
-}
-
-function updateReleaseFeedbackCounter(){
-  if(!releaseFeedbackInput || !releaseFeedbackCounter) return;
-  releaseFeedbackCounter.textContent = releaseFeedbackInput.value.length + " / 30";
-}
-
-function resetReleaseFeedbackView(){
-  releaseFeedbackBusy = false;
-  if(releaseFeedbackInput){
-    releaseFeedbackInput.value = "";
-    releaseFeedbackInput.disabled = false;
-  }
-  if(releaseFeedbackCounter) releaseFeedbackCounter.textContent = "0 / 30";
-  if(releaseFeedbackStatus){
-    releaseFeedbackStatus.textContent = "";
-    releaseFeedbackStatus.className = "release-feedback-status";
-  }
-  if(releaseFeedbackLoader) releaseFeedbackLoader.classList.remove("show");
-  if(releaseFeedbackSuccess) releaseFeedbackSuccess.classList.remove("show");
-  if(releaseFeedbackActions) releaseFeedbackActions.style.display = "flex";
-  if(releaseFeedbackSend){
-    releaseFeedbackSend.disabled = false;
-    releaseFeedbackSend.textContent = "SEND FEEDBACK";
-  }
-}
-
-function closeReleaseFeedback(){
-  if(releaseFeedbackBusy) return;
-  releaseFeedbackScreen.style.display = "none";
-  document.body.classList.remove("release-feedback-microfreeze");
-  setStatus("SIMULATION / ONLINE",false);
-}
-
-function openReleaseFeedback(){
-  if(releaseFeedbackWasShown()) return;
-  markReleaseFeedbackShown();
-  resetReleaseFeedbackView();
-  releaseFeedbackScreen.style.display = "flex";
-  setStatus("UPDATE / R1.4",false);
-  setTimeout(()=>releaseFeedbackInput?.focus(),80);
-}
-
-async function sendReleaseFeedback(){
-  if(releaseFeedbackBusy) return;
-
-  const value = releaseFeedbackInput.value.trim();
-  if(!value){
-    releaseFeedbackStatus.textContent = "ENTER A SUGGESTION FIRST";
-    releaseFeedbackStatus.className = "release-feedback-status error";
-    releaseFeedbackInput.focus();
-    return;
-  }
-
-  releaseFeedbackBusy = true;
-  releaseFeedbackInput.disabled = true;
-  releaseFeedbackSend.disabled = true;
-  releaseFeedbackSkip.disabled = true;
-  releaseFeedbackActions.style.display = "none";
-  releaseFeedbackStatus.textContent = "CHANNEL ESTABLISHED";
-  releaseFeedbackStatus.className = "release-feedback-status busy";
-  releaseFeedbackLoader.classList.add("show");
-  setStatus("FEEDBACK / TRANSMITTING",true);
-
-  const steps = [
-    ["> preparing local package...",320],
-    ["> validating R1.5 feedback payload...",430],
-    ["> routing to release queue...",500],
-    ["> finalizing transmission...",520]
-  ];
-
-  for(const [line,delay] of steps){
-    releaseFeedbackLoaderLog.textContent = line;
-    await sleep(delay);
-  }
-
-  // Deliberate tiny UI stall to imitate a real finalization/commit moment.
-  releaseFeedbackLoaderLog.textContent = "> committing transmission...";
-  await sleep(220);
-  const freezeUntil = performance.now() + 240;
-  while(performance.now() < freezeUntil){ /* intentional micro-freeze */ }
-
-  releaseFeedbackLoader.classList.remove("show");
-  releaseFeedbackSuccess.classList.add("show");
-  releaseFeedbackStatus.textContent = "TRANSMISSION COMPLETE";
-  releaseFeedbackStatus.className = "release-feedback-status ok";
-  setStatus("FEEDBACK / SENT",false);
-
-  await sleep(250);
-  releaseFeedbackClose.textContent = "×";
-  releaseFeedbackClose.disabled = false;
-  releaseFeedbackBusy = false;
-  releaseFeedbackSkip.disabled = false;
-}
-
-releaseFeedbackInput?.addEventListener("input",updateReleaseFeedbackCounter);
-releaseFeedbackSend?.addEventListener("click",sendReleaseFeedback);
-releaseFeedbackClose?.addEventListener("click",closeReleaseFeedback);
-releaseFeedbackSkip?.addEventListener("click",closeReleaseFeedback);
-
-releaseFeedbackScreen?.addEventListener("click",e=>{
-  if(e.target === releaseFeedbackScreen && !releaseFeedbackBusy) closeReleaseFeedback();
-});
-
-releaseFeedbackInput?.addEventListener("keydown",e=>{
-  if(e.key === "Escape" && !releaseFeedbackBusy){
-    e.preventDefault();
-    closeReleaseFeedback();
-  }
-});
-
 
 function historyLabel(iso){
   try{ return new Date(iso).toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"}); }
@@ -1296,7 +1009,7 @@ function renderHistory(){
 
 function makeSessionId(username){
   const seed = hashSeed(username || "session") ^ Date.now();
-  return "R14-" + (seed >>> 0).toString(36).toUpperCase().slice(-8).padStart(8,"0");
+  return "R15-" + (seed >>> 0).toString(36).toUpperCase().slice(-8).padStart(8,"0");
 }
 
 function appendSessionLog(message,kind=""){
@@ -1834,7 +1547,7 @@ demoCvv?.addEventListener("input",()=>{
 
 changelogBtn?.addEventListener("click",()=>{
   changelogScreen.style.display = "flex";
-  setStatus("CHANGELOG / R1.4",false);
+  setStatus("CHANGELOG / R1.5",false);
 });
 
 function closeChangelog(){
@@ -1851,17 +1564,8 @@ renderHistory();
 updateNodeTelemetry();
 setInterval(updateNodeTelemetry,3000);
 
-// R1.4 release note: one-time feedback prompt; no feedback text is persisted.
-setTimeout(openReleaseFeedback,420);
-
 document.addEventListener("keydown",e=>{
   if(e.key !== "Escape") return;
-
-  if(releaseFeedbackScreen.style.display === "flex" && !releaseFeedbackBusy){
-    e.preventDefault();
-    closeReleaseFeedback();
-    return;
-  }
 
   if(changelogScreen.style.display === "flex"){
     e.preventDefault();
